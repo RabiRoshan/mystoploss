@@ -14,18 +14,27 @@ function App() {
   const [stoplossAmount, setStoplossAmount] = useState(0);
   const [targetAmount, setTargetAmount] = useState(0);
 
+  const [quantity, setQuantity] = useState(1);
+  const [netProfitAmount, setNetProfitAmount] = useState(0);
+  const [netLossAmount, setNetLossAmount] = useState(0);
+
   useEffect(() => {
     const stoplossValue = (amount * stoplossPercentage) / 100;
     const targetValue = (amount * targetPercentage) / 100;
 
+    setNetProfitAmount(quantity * targetValue)
+    setNetLossAmount(quantity * stoplossValue)
+
     if (positionType === "buy") {
       setStoplossAmount(amount - stoplossValue);
       setTargetAmount(amount + targetValue);
+      setNetProfitAmount(quantity * targetValue)
+      setNetLossAmount(quantity * stoplossValue)
     } else if (positionType === "sell") {
       setStoplossAmount(amount + stoplossValue);
       setTargetAmount(amount - targetValue);
     }
-  }, [amount, stoplossPercentage, targetPercentage, positionType]);
+  }, [amount, stoplossPercentage, targetPercentage, positionType, quantity]);
 
   return (
     <div className="App">
@@ -116,6 +125,49 @@ function App() {
           <InputNumber
             defaultValue={0}
             value={targetAmount}
+            step={0.1}
+            formatter={(value) =>
+              `₹ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, "")
+            }
+            parser={(value) => value.replace(/₹\s?|(,*)/g, "")}
+            disabled
+          />
+        </div>
+      </div>
+      <div className="row">
+        <div className="inputLabelContainer">
+          <Text strong className="inputLabel">
+            Quantity:{" "}
+          </Text>
+          <InputNumber
+            defaultValue={1}
+            value={quantity}
+            step={1}
+            onChange={(value) => setQuantity(value)}
+          />
+        </div>
+        <div className="inputLabelContainer">
+          <Text strong className="inputLabel">
+            Net Profit:{" "}
+          </Text>
+          <InputNumber
+            defaultValue={0}
+            value={netProfitAmount}
+            step={0.1}
+            formatter={(value) =>
+              `₹ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, "")
+            }
+            parser={(value) => value.replace(/₹\s?|(,*)/g, "")}
+            disabled
+          />
+        </div>
+        <div className="inputLabelContainer">
+          <Text strong className="inputLabel">
+            Net Loss:{" "}
+          </Text>
+          <InputNumber
+            defaultValue={0}
+            value={netLossAmount}
             step={0.1}
             formatter={(value) =>
               `₹ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, "")
