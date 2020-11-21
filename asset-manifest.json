@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/mystoploss/static/css/main.baa14b9d.chunk.css",
+    "main.js": "/mystoploss/static/js/main.a915fd9a.chunk.js",
+    "main.js.map": "/mystoploss/static/js/main.a915fd9a.chunk.js.map",
+    "runtime-main.js": "/mystoploss/static/js/runtime-main.cc5668d9.js",
+    "runtime-main.js.map": "/mystoploss/static/js/runtime-main.cc5668d9.js.map",
+    "static/css/2.ea9b1cc9.chunk.css": "/mystoploss/static/css/2.ea9b1cc9.chunk.css",
+    "static/js/2.98419fb4.chunk.js": "/mystoploss/static/js/2.98419fb4.chunk.js",
+    "static/js/2.98419fb4.chunk.js.map": "/mystoploss/static/js/2.98419fb4.chunk.js.map",
+    "static/js/3.a83b722f.chunk.js": "/mystoploss/static/js/3.a83b722f.chunk.js",
+    "static/js/3.a83b722f.chunk.js.map": "/mystoploss/static/js/3.a83b722f.chunk.js.map",
+    "index.html": "/mystoploss/index.html",
+    "static/css/2.ea9b1cc9.chunk.css.map": "/mystoploss/static/css/2.ea9b1cc9.chunk.css.map",
+    "static/css/main.baa14b9d.chunk.css.map": "/mystoploss/static/css/main.baa14b9d.chunk.css.map",
+    "static/js/2.98419fb4.chunk.js.LICENSE.txt": "/mystoploss/static/js/2.98419fb4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc5668d9.js",
+    "static/css/2.ea9b1cc9.chunk.css",
+    "static/js/2.98419fb4.chunk.js",
+    "static/css/main.baa14b9d.chunk.css",
+    "static/js/main.a915fd9a.chunk.js"
+  ]
+}
